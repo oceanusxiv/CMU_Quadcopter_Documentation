@@ -61,13 +61,20 @@ In the following sections, and in the future, almost all development work will b
 ### Terminal
 
 * man [whatever] -> brings you to the documentation on any command
+
+![man!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/man.gif)
+
 * ls [-a] -> lists out all elements in the current directory, -a reveals hidden files.
+
+![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/ls.gif)
+
 * cd [..]/[~/Downloads] -> changes directory, .. denotes one directory upwards, and ~ denotes the home directory, typically /home/username/
 * rm [-rf] -> deletes files, -rf deletes directories
 * sudo -> run with root permission, use with caution and only when needed
 * mkdir [-p] -> make directories(folders), -p allows for creation of nested directories
 * [sudo] apt install [package] -> As of 16.04 the command to install packages and programs in Ubuntu, may require sudo
 * pressing the up and down arrow keys shows all previous commands, helpful with repeating long commands
+* incomplete commands or file paths can be autcompleted by pressing <kbd>TAB</kbd>, two <kbd>TAB</kbd> presses will reveal multiple options if there are any
 * copying and pasting in terminal uses <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>C</kbd> and <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>V</kbd>
 * <kbd>CTRL</kbd>+<kbd>C</kbd> in terminal stops any program running on the current terminal
 * <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>T</kbd> opens a new tab on the terminal
