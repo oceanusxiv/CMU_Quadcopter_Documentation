@@ -62,27 +62,27 @@ In the following sections, and in the future, almost all development work will b
 
 * man [whatever] -> brings you to the documentation on any command
 
-![man!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/man.gif)
+![man!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/gif/man.gif)
 
 * ls [-a] -> lists out all elements in the current directory, -a reveals hidden files.
 
-![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/ls.gif)
+![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/gif/ls.gif)
 
 * cd [..]/[~/Downloads] -> changes directory, .. denotes one directory upwards, and ~ denotes the home directory, typically /home/username/
 
-![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/cd.gif)
+![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/gif/cd.gif)
 
 * rm [-rf] -> deletes files, -rf deletes directories
 
-![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/rm.gif)
+![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/gif/rm.gif)
 
 * mkdir [-p] -> make directories(folders), -p allows for creation of nested directories
 
-![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/mkdir.gif)
+![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/gif/mkdir.gif)
 
 * sudo -> run with root permission, use with caution and only when needed
 
-![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/sudo.gif)
+![look!](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/gif/sudo.gif)
 
 * [sudo] apt install [package] -> As of 16.04 the command to install packages and programs in Ubuntu, may require sudo
 * pressing the up and down arrow keys shows all previous commands, helpful with repeating long commands
