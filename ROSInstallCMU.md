@@ -1,6 +1,7 @@
 # ROS Setup for CMU Quadcopter Group
 
 for original documentation, consult:
+
 * [Official ROS Installation Guide](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 * [ROS Documentation](http://wiki.ros.org)
 * [Ubuntu Installation on VMWare Workstation](https://betanews.com/2012/08/29/how-to-install-ubuntu-on-vmware-workstation/)
@@ -8,7 +9,7 @@ for original documentation, consult:
 * [Official Ubuntu 16.04 Desktop Guide](https://help.ubuntu.com/lts/ubuntu-help/index.html)
 * [Unix Terminal Quickstart](http://www.stat.rice.edu/~bhatticr/tutorials/UnixQuickStart.pdf)
 
-Since most people would not have Linux as primary OS or dualboot, we will first cover how to install Ubuntu on a Virtual Machine.
+Since most people would not have Linux as primary OS or dualboot, we will first cover how to install Ubuntu as a Virtual Machine.
 
 ## Installing the Ubuntu on a VM
 
@@ -51,18 +52,20 @@ After login, add **VMWare Fusion 8 (for Mac OS X)** to cart, and "buy" it. After
 In the following sections, and in the future, almost all development work will be done within the Ubuntu environment with substantial usage of the unix terminal. If you are not familiar with either of those, I encourage you to check out the Ubuntu and Terminal guides listed above. For now, here are a few tips, tricks, and notes:
 
 ### Ubuntu
+
 * (From Mac) All <kbd>CMD</kbd> based keyboard shortcuts in Ubuntu uses <kbd>CTRL</kbd> instead. e.g. <kbd>CMD</kbd>+<kbd>C</kbd> -> <kbd>CTRL</kbd>+<kbd>C</kbd>
 * The Dashboard on the top left can be openned to search for applications and files similar to Windows Menu SearchBar or Mac Spotlight Search.
 * The terminal can be openned by the keyboard shortcut: <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>T</kbd>
 * Applications can be locked to the Launchbar in a similar fashion as both other OS's.
 
 ### Terminal
+
 * man [whatever] -> brings you to the documentation on any command
 * ls [-a] -> lists out all elements in the current directory, -a reveals hidden files.
 * cd [..]/[~/Downloads] -> changes directory, .. denotes one directory upwards, and ~ denotes the home directory, typically /home/username/
 * rm [-rf] -> deletes files, -rf deletes directories
 * sudo -> run with root permission, use with caution and only when needed
-* mkdir [-p] -> make directors(folders), -p allows for creating of nested directories
+* mkdir [-p] -> make directories(folders), -p allows for creation of nested directories
 * [sudo] apt install [package] -> As of 16.04 the command to install packages and programs in Ubuntu, may require sudo
 * pressing the up and down arrow keys shows all previous commands, helpful with repeating long commands
 * copying and pasting in terminal uses <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>C</kbd> and <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>V</kbd>
@@ -74,7 +77,7 @@ In the following sections, and in the future, almost all development work will b
 
 Installing ROS is a relatively streamlined procress involving just a few terminal commands, feel free to copy the commands below one by one into terminal. However, do take a look at the full installation guide listed above to get some context on what's going on.
 
-```
+``` bash
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
 sudo apt update
@@ -91,7 +94,7 @@ Done!
 
 Without getting into too much detail, catkin is the build system commonly used with ROS packages, and is necessary and useful to manage multiple ROS packages built from source.
 
-```
+``` bash
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list'
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt update
@@ -102,7 +105,7 @@ sudo apt install python-catkin-tools
 
 The following ROS packages are necessary for us to run our quadcopter programs and our iRobot programs.
 
-```
+``` bash
 sudo apt install ros-kinetic-mavros-extras ros-kinetic-turtlebot ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-interactions
 ```
 
