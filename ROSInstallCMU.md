@@ -1,4 +1,4 @@
-# ROS Setup for CMU Quadcopter Group
+# ROS Install for CMU Quadcopter Group
 
 for original documentation, consult:
 
@@ -133,4 +133,3 @@ sudo apt install ros-kinetic-mavros-extras ros-kinetic-turtlebot ros-kinetic-tur
 You are highly encouraged to read up on the official tutorial series on the ROS website [here](http://wiki.ros.org/ROS/Tutorials).
 
 We will cover setting up your ROS workspace and using ROS next time.
-
