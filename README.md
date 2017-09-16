@@ -41,13 +41,20 @@ Cheap and effective LIDAR
 
 #### Odroid XU4
 
+![Droid!](http://www.hardkernel.com/main/_Files/prdt/2017/201704/201704250351342687.jpg) 
+[Product Page](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G143452239825) 
+Small but powerful Embedded computer
+
 #### Pixhawk
 
-## Operating Procedure
+![Pixhawk!](https://pixhawk.org/_media/modules/pixhawk-logo-view.jpg)
+By far the most popular open source flight controller in the world
+
+## Operating Procedure (Positon Control)
 
 1. Power on System by plugging in LIPO
 2. Check Odroid power up by status LED (blue light flashing)
-3. Disable safety by pressing the red safety button until LED turns from flashing to solid red
+3. Disable safety by pressing the [red safety button](https://pixhawk.org/_media/users/px4-arming-button.jpg) until LED turns from flashing to solid red
 4. Open Terminal or Terminal Emulator and SSH into Odroid via following
 
 ```bash
@@ -59,11 +66,12 @@ ssh odroid@efang_odroid.wv.cc.cmu.edu
 5. Once SSH session started, source workspace
 
 ```bash
+source ros-odroid-cmu.sh
 cd sandbox/quadcopter
 source devel/setup.bash
 ```
 
-6. Repeat steps 3 & 4 for a new terminal window, else use TMUX to open a new window (guide [here](http://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/))
+6. Repeat steps 3 & 4 for a new terminal window, else use TMUX or screen to open a new window (guide [here](http://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/))
 7. In one terminal, start MAVROS and preparatory ROS nodes
 
 ```bash
@@ -76,5 +84,19 @@ roslaunch hallway_navigator cartographer_mavros.launch
 roslaunch hallway_navigator cartographer_slam.launch
 ```
 
-9. Arm the drone and perform liftoff in MANUAL mode
-10. switch to POSITION mode
+9. (Optional) On client side computer (laptop), establish ROS network (script modification described below)
+
+```bash
+source ros-odroid-cmu.sh
+```
+10. (Optional) use `rviz` to view mapping and localization
+
+11. Arm the drone and perform liftoff in MANUAL mode
+12. switch to POSITION mode once in desired position
+
+### Notes
+
+* Script for establishing client side ROS network is given here, alter `ROS_IP` as seen fit
+* During testing always grab onto the drone in case of unexpected behavior
+* Do not connect the Pixhawk via its micro-USB port to a computer while it is also powered by battery
+* installing [QGroundControl](http://qgroundcontrol.com/) can be helpful as a ground station
