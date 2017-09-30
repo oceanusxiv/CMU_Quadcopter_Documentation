@@ -109,4 +109,4 @@ cd ~/sandbox/quadcopter
 
 catkin build
 
-./src/mavros/mavros/scripts/install_geographiclib_datasets.sh
+sudo ./src/mavros/mavros/scripts/install_geographiclib_datasets.sh
