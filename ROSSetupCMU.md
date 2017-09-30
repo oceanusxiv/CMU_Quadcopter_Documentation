@@ -6,9 +6,10 @@ In this section we will install and setup the necessary packages and components 
 
 * Installing dependencies
 
-Simply download this script, and run it as below
+Simply download this [script](https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/scripts/ubuntu-sim-setup.sh), and run it as below
 
 ```bash
+wget https://raw.githubusercontent.com/eric1221bday/CMU_Quadcopter_Documentation/master/scripts/ubuntu-sim-setup.sh
 source ubuntu-sim-setup.sh
 ```
 
