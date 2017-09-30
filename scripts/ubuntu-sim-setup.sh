@@ -77,15 +77,18 @@ sudo apt-get install protobuf-compiler libeigen3-dev libopencv-dev -y
 sudo apt-get install python-rosinstall -y
 
 # MAVROS: https://dev.px4.io/en/ros/mavros_installation.html
+# install future for pymavlink
+pip install future
+
 ## Create catkin workspace
-mkdir -p ~/quadcopter/src
-cd ~/quadcopter
+mkdir -p ~/sandbox/quadcopter/src
+cd ~/sandbox/quadcopter
 
 ## Install dependencies
 sudo apt-get install python-wstool python-rosinstall-generator python-catkin-tools -y
 
 ## Initialise wstool
-wstool init ~/quadcopter/src
+wstool init ~/sandbox/quadcopter/src
 
 ## Build MAVROS
 ### Get source (upstream - released)
@@ -97,10 +100,13 @@ wstool merge -t src /tmp/mavros.rosinstall
 wstool update -t src
 rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
 
-cd ~/quadcopter/src
+cd ~/sandbox/quadcopter/src
 git clone https://github.com/PX4/Firmware.git --recursive
 git clone https://github.com/PX4/sitl_gazebo.git --recursive
 git clone https://github.com/eric1221bday/hallway_navigator.git
 git clone https://github.com/cmu-quadcopter/mavros_excercise.git
+cd ~/sandbox/quadcopter
 
 catkin build
+
+./src/mavros/mavros/scripts/install_geographiclib_dataset.sh
