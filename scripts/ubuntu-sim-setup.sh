@@ -69,3 +69,38 @@ else
     popd
 fi
 
+# ROS Kinetic/Gazebo (ROS Kinetic includes Gazebo7 by default)
+## Gazebo dependencies
+sudo apt-get install protobuf-compiler libeigen3-dev libopencv-dev -y
+
+## Get rosinstall
+sudo apt-get install python-rosinstall -y
+
+# MAVROS: https://dev.px4.io/en/ros/mavros_installation.html
+## Create catkin workspace
+mkdir -p ~/quadcopter/src
+cd ~/quadcopter
+
+## Install dependencies
+sudo apt-get install python-wstool python-rosinstall-generator python-catkin-tools -y
+
+## Initialise wstool
+wstool init ~/quadcopter/src
+
+## Build MAVROS
+### Get source (upstream - released)
+rosinstall_generator --upstream mavros | tee /tmp/mavros.rosinstall
+### Get latest released mavlink package
+rosinstall_generator mavlink | tee -a /tmp/mavros.rosinstall
+### Setup workspace & install deps
+wstool merge -t src /tmp/mavros.rosinstall
+wstool update -t src
+rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
+
+cd ~/quadcopter/src
+git clone https://github.com/PX4/Firmware.git --recursive
+git clone https://github.com/PX4/sitl_gazebo.git --recursive
+git clone https://github.com/eric1221bday/hallway_navigator.git
+git clone https://github.com/cmu-quadcopter/mavros_excercise.git
+
+catkin build
