@@ -102,7 +102,7 @@ rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
 
 cd ~/sandbox/quadcopter/src
 git clone https://github.com/PX4/Firmware.git --recursive
-git clone https://github.com/PX4/sitl_gazebo.git --recursive
+git clone https://github.com/eric1221bday/sitl_gazebo.git --recursive
 git clone https://github.com/eric1221bday/hallway_navigator.git
 git clone https://github.com/cmu-quadcopter/mavros_excercise.git
 cd ~/sandbox/quadcopter
